@@ -1,0 +1,34 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "commissioner",
+        "clinician",
+        "finance",
+        "user"
+      ],
+      "default": "user",
+      "description": "User role for RBAC"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "department": {
+      "type": "string",
+      "description": "Department"
+    },
+    "organisation": {
+      "type": "string",
+      "description": "Organisation name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone"
+    }
+  }
+}

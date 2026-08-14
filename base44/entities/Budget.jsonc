@@ -1,0 +1,91 @@
+{
+  "name": "Budget",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to Patient entity ID"
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name"
+    },
+    "care_plan_id": {
+      "type": "string",
+      "description": "Reference to CarePlan entity ID"
+    },
+    "indicative_amount": {
+      "type": "number",
+      "description": "Indicative budget amount (\u00a3)"
+    },
+    "approved_amount": {
+      "type": "number",
+      "description": "Approved budget amount (\u00a3)"
+    },
+    "spent_amount": {
+      "type": "number",
+      "description": "Amount spent to date (\u00a3)"
+    },
+    "remaining_amount": {
+      "type": "number",
+      "description": "Remaining budget (\u00a3)"
+    },
+    "budget_period_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Budget period start date"
+    },
+    "budget_period_end": {
+      "type": "string",
+      "format": "date",
+      "description": "Budget period end date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Submitted",
+        "Under Review",
+        "Approved",
+        "Active",
+        "Overspent",
+        "Closed"
+      ],
+      "default": "Draft",
+      "description": "Budget status"
+    },
+    "funding_type": {
+      "type": "string",
+      "enum": [
+        "NHS",
+        "Local Authority",
+        "Mixed",
+        "Joint"
+      ],
+      "description": "Primary funding source type"
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Approver email"
+    },
+    "approval_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date approved"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Budget notes"
+    }
+  },
+  "required": [
+    "case_id",
+    "patient_id",
+    "patient_name",
+    "indicative_amount"
+  ]
+}

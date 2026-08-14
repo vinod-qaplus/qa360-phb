@@ -1,0 +1,106 @@
+{
+  "name": "Contract",
+  "type": "object",
+  "properties": {
+    "contract_reference": {
+      "type": "string",
+      "description": "Unique contract reference"
+    },
+    "provider_name": {
+      "type": "string",
+      "description": "Provider organisation name"
+    },
+    "provider_type": {
+      "type": "string",
+      "enum": [
+        "Care Agency",
+        "NHS Provider",
+        "Private Provider",
+        "Voluntary Sector",
+        "Personal Assistant Agency",
+        "Equipment Supplier",
+        "Therapy Provider"
+      ],
+      "description": "Type of provider"
+    },
+    "service_type": {
+      "type": "string",
+      "description": "Type of service provided"
+    },
+    "hourly_rate": {
+      "type": "number",
+      "description": "Hourly rate (\u00a3)"
+    },
+    "daily_rate": {
+      "type": "number",
+      "description": "Daily rate (\u00a3)"
+    },
+    "annual_value": {
+      "type": "number",
+      "description": "Total annual contract value (\u00a3)"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Contract start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Contract end date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Under Negotiation",
+        "Active",
+        "Expiring Soon",
+        "Expired",
+        "Terminated"
+      ],
+      "default": "Draft",
+      "description": "Contract status"
+    },
+    "terms": {
+      "type": "string",
+      "description": "Key contract terms"
+    },
+    "notice_period_days": {
+      "type": "number",
+      "description": "Notice period in days"
+    },
+    "cqc_rating": {
+      "type": "string",
+      "enum": [
+        "Outstanding",
+        "Good",
+        "Requires Improvement",
+        "Inadequate",
+        "Not Rated"
+      ],
+      "description": "CQC inspection rating"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Provider contact name"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Provider contact email"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Provider contact phone"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes"
+    }
+  },
+  "required": [
+    "provider_name",
+    "provider_type",
+    "start_date"
+  ]
+}

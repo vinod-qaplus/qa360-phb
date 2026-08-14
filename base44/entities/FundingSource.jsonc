@@ -1,0 +1,73 @@
+{
+  "name": "FundingSource",
+  "type": "object",
+  "properties": {
+    "budget_id": {
+      "type": "string",
+      "description": "Reference to Budget entity ID"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "NHS Continuing Healthcare",
+        "NHS Section 117",
+        "Local Authority",
+        "Joint Funded",
+        "Clinical Commissioning Group",
+        "Integrated Care Board"
+      ],
+      "description": "Type of funding source"
+    },
+    "organisation_name": {
+      "type": "string",
+      "description": "Funding organisation name"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Funding amount (\u00a3)"
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Percentage of total budget"
+    },
+    "reference_number": {
+      "type": "string",
+      "description": "Funding reference number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Confirmed",
+        "Active",
+        "Suspended",
+        "Ended"
+      ],
+      "default": "Pending",
+      "description": "Funding status"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Funding start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Funding end date"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes"
+    }
+  },
+  "required": [
+    "budget_id",
+    "source_type",
+    "amount"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "name": "Patient",
+  "type": "object",
+  "properties": {
+    "nhs_number": {
+      "type": "string",
+      "description": "10-digit NHS number"
+    },
+    "title": {
+      "type": "string",
+      "enum": [
+        "Mr",
+        "Mrs",
+        "Ms",
+        "Miss",
+        "Dr",
+        "Prof",
+        "Mx"
+      ],
+      "description": "Patient title"
+    },
+    "first_name": {
+      "type": "string",
+      "description": "Patient first name"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Patient last name"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ],
+      "description": "Gender"
+    },
+    "address_line_1": {
+      "type": "string",
+      "description": "Address line 1"
+    },
+    "address_line_2": {
+      "type": "string",
+      "description": "Address line 2"
+    },
+    "city": {
+      "type": "string",
+      "description": "City/Town"
+    },
+    "postcode": {
+      "type": "string",
+      "description": "UK postcode"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "gp_practice": {
+      "type": "string",
+      "description": "GP practice name"
+    },
+    "gp_name": {
+      "type": "string",
+      "description": "GP name"
+    },
+    "ccg_area": {
+      "type": "string",
+      "description": "CCG/ICB area"
+    },
+    "eligibility_category": {
+      "type": "string",
+      "enum": [
+        "Continuing Healthcare",
+        "Section 117",
+        "Personal Wheelchair Budget",
+        "Maternity",
+        "End of Life",
+        "Mental Health",
+        "Learning Disability",
+        "Other"
+      ],
+      "description": "PHB eligibility category"
+    },
+    "eligibility_status": {
+      "type": "string",
+      "enum": [
+        "Pending Assessment",
+        "Eligible",
+        "Not Eligible",
+        "Under Review"
+      ],
+      "default": "Pending Assessment",
+      "description": "Current eligibility status"
+    },
+    "next_of_kin_name": {
+      "type": "string",
+      "description": "Next of kin name"
+    },
+    "next_of_kin_phone": {
+      "type": "string",
+      "description": "Next of kin phone"
+    },
+    "next_of_kin_relationship": {
+      "type": "string",
+      "description": "Relationship to patient"
+    },
+    "notes": {
+      "type": "string",
+      "description": "General notes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Deceased",
+        "Transferred"
+      ],
+      "default": "Active",
+      "description": "Patient record status"
+    }
+  },
+  "required": [
+    "nhs_number",
+    "first_name",
+    "last_name",
+    "date_of_birth"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to Patient entity ID"
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name"
+    },
+    "care_plan_id": {
+      "type": "string",
+      "description": "Reference to CarePlan entity ID"
+    },
+    "review_type": {
+      "type": "string",
+      "enum": [
+        "Scheduled",
+        "Unscheduled",
+        "Annual",
+        "Reassessment",
+        "Safeguarding",
+        "Financial"
+      ],
+      "description": "Type of review"
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of review"
+    },
+    "reviewer": {
+      "type": "string",
+      "description": "Reviewer email"
+    },
+    "outcomes_met": {
+      "type": "string",
+      "enum": [
+        "Fully Met",
+        "Partially Met",
+        "Not Met",
+        "Exceeded"
+      ],
+      "description": "Whether care plan outcomes were met"
+    },
+    "patient_satisfaction": {
+      "type": "string",
+      "enum": [
+        "Very Satisfied",
+        "Satisfied",
+        "Neutral",
+        "Dissatisfied",
+        "Very Dissatisfied"
+      ],
+      "description": "Patient satisfaction rating"
+    },
+    "clinical_notes": {
+      "type": "string",
+      "description": "Clinical review notes"
+    },
+    "financial_notes": {
+      "type": "string",
+      "description": "Financial review notes"
+    },
+    "recommendations": {
+      "type": "string",
+      "description": "Review recommendations"
+    },
+    "action_required": {
+      "type": "string",
+      "enum": [
+        "No Change",
+        "Amend Care Plan",
+        "Increase Budget",
+        "Decrease Budget",
+        "Change Provider",
+        "Close Case",
+        "Escalate"
+      ],
+      "description": "Action recommended"
+    },
+    "next_review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Next review date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Scheduled",
+        "In Progress",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Scheduled",
+      "description": "Review status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "General notes"
+    }
+  },
+  "required": [
+    "case_id",
+    "patient_name",
+    "review_type",
+    "review_date"
+  ]
+}

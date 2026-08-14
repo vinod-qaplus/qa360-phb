@@ -1,0 +1,91 @@
+{
+  "name": "CarePackage",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to Patient entity ID"
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name"
+    },
+    "provider_name": {
+      "type": "string",
+      "description": "Care provider organisation name"
+    },
+    "contract_id": {
+      "type": "string",
+      "description": "Reference to Contract entity ID"
+    },
+    "contract_reference": {
+      "type": "string",
+      "description": "Contract reference number"
+    },
+    "services": {
+      "type": "string",
+      "description": "Description of services in the package"
+    },
+    "hours_per_week": {
+      "type": "number",
+      "description": "Total care hours per week"
+    },
+    "weekly_cost": {
+      "type": "number",
+      "description": "Weekly cost (\u00a3)"
+    },
+    "annual_cost": {
+      "type": "number",
+      "description": "Projected annual cost (\u00a3)"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Package start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Package end date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Proposed",
+        "Approved",
+        "Active",
+        "Under Review",
+        "Suspended",
+        "Ended"
+      ],
+      "default": "Draft",
+      "description": "Package status"
+    },
+    "delivery_method": {
+      "type": "string",
+      "enum": [
+        "Direct Payment",
+        "Notional Budget",
+        "Third Party",
+        "Mixed"
+      ],
+      "description": "How the budget is managed"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes"
+    }
+  },
+  "required": [
+    "case_id",
+    "patient_id",
+    "patient_name",
+    "provider_name",
+    "services"
+  ]
+}

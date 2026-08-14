@@ -1,0 +1,94 @@
+{
+  "name": "BudgetItem",
+  "type": "object",
+  "properties": {
+    "budget_id": {
+      "type": "string",
+      "description": "Reference to Budget entity ID"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Personal Assistant",
+        "Care Agency",
+        "Equipment",
+        "Therapy",
+        "Transport",
+        "Respite",
+        "Training",
+        "Accommodation",
+        "Other"
+      ],
+      "description": "Budget item category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "provider_name": {
+      "type": "string",
+      "description": "Service provider name"
+    },
+    "unit_cost": {
+      "type": "number",
+      "description": "Cost per unit (\u00a3)"
+    },
+    "units": {
+      "type": "number",
+      "description": "Number of units (hours/items)"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "One-off",
+        "Daily",
+        "Weekly",
+        "Fortnightly",
+        "Monthly",
+        "Quarterly",
+        "Annual"
+      ],
+      "description": "Frequency of cost"
+    },
+    "total_cost": {
+      "type": "number",
+      "description": "Total cost for this item (\u00a3)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Proposed",
+        "Approved",
+        "Active",
+        "Paused",
+        "Ended"
+      ],
+      "default": "Proposed",
+      "description": "Item status"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Service start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Service end date"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "budget_id",
+    "category",
+    "description",
+    "total_cost"
+  ]
+}

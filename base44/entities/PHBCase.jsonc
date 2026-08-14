@@ -1,0 +1,119 @@
+{
+  "name": "PHBCase",
+  "type": "object",
+  "properties": {
+    "case_reference": {
+      "type": "string",
+      "description": "Unique case reference number"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to Patient entity ID"
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name (denormalized for display)"
+    },
+    "patient_nhs_number": {
+      "type": "string",
+      "description": "Patient NHS number (denormalized)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Referral",
+        "Assessment",
+        "Care Planning",
+        "Approval",
+        "Active",
+        "Under Review",
+        "Suspended",
+        "Closed"
+      ],
+      "default": "Referral",
+      "description": "Current workflow stage"
+    },
+    "eligibility_category": {
+      "type": "string",
+      "enum": [
+        "Continuing Healthcare",
+        "Section 117",
+        "Personal Wheelchair Budget",
+        "Maternity",
+        "End of Life",
+        "Mental Health",
+        "Learning Disability",
+        "Other"
+      ],
+      "description": "PHB eligibility category"
+    },
+    "referral_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of referral"
+    },
+    "assessment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of assessment"
+    },
+    "care_plan_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date care plan created"
+    },
+    "approval_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of budget approval"
+    },
+    "active_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date case became active"
+    },
+    "next_review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Next scheduled review date"
+    },
+    "closure_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date case was closed"
+    },
+    "closure_reason": {
+      "type": "string",
+      "description": "Reason for case closure"
+    },
+    "assigned_commissioner": {
+      "type": "string",
+      "description": "Assigned commissioner email"
+    },
+    "assigned_clinician": {
+      "type": "string",
+      "description": "Assigned clinician email"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Urgent"
+      ],
+      "default": "Medium",
+      "description": "Case priority"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Case notes"
+    }
+  },
+  "required": [
+    "patient_id",
+    "patient_name",
+    "eligibility_category",
+    "referral_date"
+  ]
+}

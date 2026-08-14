@@ -1,0 +1,81 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of user who performed action"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name of user"
+    },
+    "user_role": {
+      "type": "string",
+      "description": "Role of user at time of action"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "Create",
+        "Update",
+        "Delete",
+        "View",
+        "Approve",
+        "Reject",
+        "Submit",
+        "Export",
+        "Login",
+        "Status Change"
+      ],
+      "description": "Type of action"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "Patient",
+        "PHBCase",
+        "CarePlan",
+        "Budget",
+        "BudgetItem",
+        "Payment",
+        "Contract",
+        "CarePackage",
+        "Review",
+        "FundingSource",
+        "User"
+      ],
+      "description": "Entity type affected"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "ID of entity affected"
+    },
+    "entity_reference": {
+      "type": "string",
+      "description": "Human-readable reference (e.g. case ref, NHS number)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of what changed"
+    },
+    "previous_value": {
+      "type": "string",
+      "description": "Previous value (for updates)"
+    },
+    "new_value": {
+      "type": "string",
+      "description": "New value (for updates)"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address"
+    }
+  },
+  "required": [
+    "user_email",
+    "action",
+    "entity_type",
+    "description"
+  ]
+}

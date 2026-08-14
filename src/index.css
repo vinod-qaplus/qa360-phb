@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Open Sans', sans-serif;
+
+    /* iChord: white/light grey main area */
+    --background: 210 15% 96%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* iChord primary: medium blue (table headers, active tabs) */
+    --primary: 213 55% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 10% 92%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 210 10% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    /* iChord accent: teal/green for save buttons */
+    --accent: 144 50% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 10% 84%;
+    --input: 210 10% 84%;
+    --ring: 213 55% 48%;
+
+    --chart-1: 213 55% 48%;
+    --chart-2: 144 50% 38%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 75% 45%;
+    --chart-5: 262 52% 47%;
+
+    /* Minimal border radius — iChord uses almost square corners */
+    --radius: 0.2rem;
+
+    /* iChord sidebar: bright cyan RGB(50, 200, 255) */
+    --sidebar-background: 195 100% 60%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 213 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 24%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 22%;
+    --sidebar-ring: 213 55% 60%;
+
+    /* Top nav: tan/beige RGB(200, 160, 100) */
+    --topnav: 36 47% 59%;
+    --topnav-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 213 55% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 144 50% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 213 55% 55%;
+    --chart-1: 213 55% 55%;
+    --chart-2: 144 50% 42%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 0 72% 55%;
+    --chart-5: 262 52% 55%;
+    --sidebar-background: 195 100% 60%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 213 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 213 55% 60%;
+    --topnav: 36 47% 59%;
+    --topnav-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 13px;
+  }
+}
+
+/* iChord-style table headers */
+.ichord-table-header {
+  background-color: hsl(213, 55%, 48%);
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* iChord sidebar alert badges */
+.ichord-badge-red    { background: #d9534f; color: white; }
+.ichord-badge-amber  { background: #f0ad4e; color: white; }
+.ichord-badge-green  { background: #5cb85c; color: white; }
+
+/* iChord RAG indicator */
+.rag-r { background: #d9534f; color: white; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; }
+.rag-a { background: #f0ad4e; color: white; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; }
+.rag-g { background: #5cb85c; color: white; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; }

@@ -1,0 +1,111 @@
+{
+  "name": "Payment",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Reference to PHBCase entity ID"
+    },
+    "budget_id": {
+      "type": "string",
+      "description": "Reference to Budget entity ID"
+    },
+    "patient_id": {
+      "type": "string",
+      "description": "Reference to Patient entity ID"
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Payment amount (\u00a3)"
+    },
+    "payment_type": {
+      "type": "string",
+      "enum": [
+        "Direct Payment",
+        "Notional Budget",
+        "Third Party Managed"
+      ],
+      "description": "Payment mechanism"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "Bank Transfer",
+        "Prepaid Card",
+        "Invoice Payment",
+        "Cheque"
+      ],
+      "description": "Payment method"
+    },
+    "payee_name": {
+      "type": "string",
+      "description": "Name of payee"
+    },
+    "payee_type": {
+      "type": "string",
+      "enum": [
+        "Patient",
+        "Provider",
+        "Personal Assistant",
+        "Third Party Organisation"
+      ],
+      "description": "Type of payee"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Payment reference"
+    },
+    "invoice_number": {
+      "type": "string",
+      "description": "Invoice number"
+    },
+    "payment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of payment"
+    },
+    "period_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Period covered start"
+    },
+    "period_end": {
+      "type": "string",
+      "format": "date",
+      "description": "Period covered end"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Processed",
+        "Paid",
+        "Failed",
+        "Refunded",
+        "On Hold"
+      ],
+      "default": "Pending",
+      "description": "Payment status"
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Approver email"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Payment notes"
+    }
+  },
+  "required": [
+    "case_id",
+    "budget_id",
+    "patient_name",
+    "amount",
+    "payment_type"
+  ]
+}
