@@ -51,6 +51,7 @@ function AppRoutes() {
       >
         <Route path="/Patients" element={<Patients />} />
         <Route path="/cases" element={<Cases />} />
+
         {/* Your other authenticated routes go here */}
       </Route>
     </Routes>
