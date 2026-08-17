@@ -54,6 +54,9 @@ function AppRoutes() {
 
         {/* Your other authenticated routes go here */}
       </Route>
+
+      {/* Catch-all route to prevent blank page on unknown URL paths */}
+      <Route path="*" element={<Login />} />
     </Routes>
   );
 }

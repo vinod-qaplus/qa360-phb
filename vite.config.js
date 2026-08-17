@@ -7,7 +7,7 @@ export default defineConfig({
   logLevel: "error",
 
   server: {
-    port: 5173,
+    port: 5174,
     strictPort: false,
   },
 
@@ -19,4 +19,5 @@ export default defineConfig({
   },
 
   plugins: [react()],
+  // base: "/Scripts/PHB-App/", //for iChord
 });
